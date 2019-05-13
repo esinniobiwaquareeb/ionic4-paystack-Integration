@@ -6,7 +6,7 @@
 
 <ion-content padding>
   <h2>Welcome to Ionic!</h2>
-<form [formGroup]="MTNTopUpForm" name="MTNTopUpForm">
+<form [formGroup]="DonationForm" name="DonationForm">
 
                 <ion-item>
                     <ion-label position="floating">
@@ -27,8 +27,8 @@
                     </ion-label>
                     <ion-input formControlName="email" type="email" [(ngModel)]="email"></ion-input>
                 </ion-item>
-                    <angular4-paystack [key]="public_key" [email]="email" [amount]="amount * 100" [ref]="random_id" [channels]="channels" [class]="'btn btn-primary'" (close)="paymentCancel()" (callback)="paymentMTNTopUpDone($event)" >
-                                    <button ion-button shape="round" color="light" icon-right routerDirection="forward" [disabled]="!MTNTopUpForm.valid">
+                    <angular4-paystack [key]="public_key" [email]="email" [amount]="amount * 100" [ref]="random_id" [channels]="channels" [class]="'btn btn-primary'" (close)="paymentCancel()" (callback)="paymentDone($event)" >
+                                    <button ion-button shape="round" color="light" icon-right routerDirection="forward" [disabled]="!DonationForm.valid">
                                         <ion-icon name="card"></ion-icon> Pay with Card
                                     </button>
                                 </angular4-paystack>
